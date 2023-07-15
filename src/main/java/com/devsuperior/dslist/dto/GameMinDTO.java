@@ -2,7 +2,7 @@ package com.devsuperior.dslist.dto;
 
 import com.devsuperior.dslist.entities.Game;
 
-// DTO não está mapeado com o banco, ele é uma classe independente.
+// Esta classe vai representar o Game, mas com menos dados. DTO não está mapeado com o banco, ele é uma classe independente.
 public class GameMinDTO {
 
 	private Long id;
@@ -13,7 +13,9 @@ public class GameMinDTO {
 
 	public GameMinDTO() {
 	}
-
+	
+	// Construtor que recebe a entidade. Aqui estou gerando um GameMinDTO copiando os dados da entidade.
+	// Ou seja, eu vou instanciar um objeto GameMinDTO a partir do objeto Game, copiando os dados do Game para o DTO.
 	public GameMinDTO(Game entity) {
 		id = entity.getId();
 		title = entity.getTitle();
