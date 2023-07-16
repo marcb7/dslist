@@ -1,6 +1,7 @@
 package com.devsuperior.dslist.dto;
 
 import com.devsuperior.dslist.entities.Game;
+import com.devsuperior.dslist.projections.GameMinProjection;
 
 // Esta classe vai representar o Game, mas com menos dados. DTO não está mapeado com o banco, ele é uma classe independente.
 public class GameMinDTO {
@@ -22,6 +23,14 @@ public class GameMinDTO {
 		year = entity.getYear();
 		imgUrl = entity.getImgUrl();
 		shortDescription = entity.getShortDescription();
+	}
+	
+	public GameMinDTO(GameMinProjection projection) {
+		id = projection.getId();
+		title = projection.getTitle();
+		year = projection.getYear();
+		imgUrl = projection.getImgUrl();
+		shortDescription = projection.getShortDescription();
 	}
 
 	public Long getId() {
